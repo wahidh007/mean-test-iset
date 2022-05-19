@@ -1,0 +1,8 @@
+<mat-card style="width: 60%;">
+    <h1>{{ etudiant!.nom}}</h1>
+    <p>
+    {{ etudiant!.dateNais | date: 'short'}} || {{ etudiant!.email}}
+    {{ etudiant!.nom}}
+  </p>
+  <a routerLink="/etudiantList">retour</a>
+</mat-card>

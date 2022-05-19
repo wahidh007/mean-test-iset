@@ -1,0 +1,28 @@
+<mat-card style="width: 60%;">
+  <form (ngSubmit)="onSubmit(formEtudiant)" #formEtudiant="ngForm">
+    <p>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Nom</mat-label>
+        <input matInput name="nom"  id="nom" placeholder="Nom Etudiant" required ngModel>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" id="email" placeholder="email etuiant" required ngModel>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+        <mat-label>Date Naissance</mat-label>
+        <input matInput name="dateNais" id="dateNais" [matDatepicker]="picker" require ngModel>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary" type="submit">Add</button>
+  </form>
+</mat-card>

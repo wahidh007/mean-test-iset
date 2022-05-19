@@ -1,0 +1,8 @@
+<mat-card style="width: 60%;">
+  <mat-list>
+      <div mat-subheader>Etudiants</div>
+      <app-etudiant-item [etudiant]="etudiant"
+                          *ngFor="let etudiant of etudiants"></app-etudiant-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>

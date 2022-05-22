@@ -13,8 +13,8 @@ export class EtudiantService {
     new Etudiant('F47', 'Fatma', 'fatma.gmail.com', new Date('09/23/1998')),
   ];
 
-  // apiUrl = "http://localhost:3010/api/etudiant/";
-  apiUrl = "/api/etudiant/";
+  apiUrl = "http://localhost:3010/api/etudiant/";
+  // apiUrl = "/api/etudiant/";
 
   constructor(private http: HttpClient) { }
 

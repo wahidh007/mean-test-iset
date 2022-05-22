@@ -21,6 +21,7 @@ app.use('/api/etudiant', routeEtudiant)
 
 app.use(express.static(path.join(__dirname, 'www')))
 
-app.listen(3010, () => {
-  console.log('Server listening on port 3010...')
+const port = process.env.PORT || 3010
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}...`)
 })

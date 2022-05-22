@@ -1,6 +1,9 @@
-<mat-card style="width: 60%;">
-  <mat-list>
-      <div mat-subheader>Etudiants</div>
+<mat-card style="width: 70%;">
+  <mat-card-title>Liste Etudiants</mat-card-title>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-list *ngIf="!isLoading">
+      <!-- <div mat-header>Etudiants</div> -->
+      <mat-divider></mat-divider>
       <app-etudiant-item [etudiant]="etudiant"
                           *ngFor="let etudiant of etudiants"></app-etudiant-item>
     <mat-divider></mat-divider>

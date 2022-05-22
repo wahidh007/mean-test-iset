@@ -8,14 +8,14 @@ import { LoginComponent } from './etudiant/login/login.component';
 const routes: Routes = [
   {path: '', component: EtudiantListComponent, pathMatch: 'full'},
   {path: 'etudiantList', component: EtudiantListComponent},
-  {path: 'etudiantAdd', component: EtudiantAddComponent},
+  {path: 'etudiantAdd/:id', component: EtudiantAddComponent},
   {path: 'etudiantDetail/:id', component: EtudiantDetailComponent},
   {path: 'login', component: LoginComponent},
   {path: '**', redirectTo: '/etudiantList'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,10 +1,12 @@
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const routeEtudiant = require('./routes/etudiant.route')
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 mongoose.connect('mongodb+srv://wahid:88ciKvnaGvM4HdHa@cluster0.rpxl2.mongodb.net/EtudiantsDatabase?retryWrites=true&w=majority')

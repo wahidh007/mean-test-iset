@@ -9,13 +9,22 @@ import { EtudiantService } from 'src/app/services/etudiant.service';
   styleUrls: ['./etudiant-detail.component.css']
 })
 export class EtudiantDetailComponent implements OnInit {
-  etudiant: Etudiant | undefined;
+  etudiant: Etudiant = {
+    _id: '',
+    nom: '',
+    email: '',
+    dateNais: new Date()
+  };
 
   constructor(private route: ActivatedRoute, private etudiantService: EtudiantService) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    this.etudiant = this.etudiantService.etudiants.find((e) => e.id === id);
+
+    this.etudiantService.getEtudiantById(id!)
+      .subscribe((e) => {
+        this.etudiant = e;
+      });
   }
 
 }

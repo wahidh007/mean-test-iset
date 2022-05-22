@@ -3,8 +3,8 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>MEAN Etudiants</span>
-  <a mat-button routerLink="/etudiantList">List Etudiant</a>
-  <a mat-button routerLink="/etudiantAdd">Add Etudiant</a>
+  <a mat-button routerLink="/etudiantList">Liste Etudiant</a>
+  <a mat-button [routerLink]="['/etudiantAdd', -1]">Add Etudiant</a>
   <span class="spacer"></span>
   <button mat-icon-button routerLink="/login" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>login</mat-icon>

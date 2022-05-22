@@ -10,11 +10,18 @@ import { EtudiantService } from 'src/app/services/etudiant.service';
 export class EtudiantListComponent implements OnInit {
 
   etudiants! : Etudiant[];
+  isLoading = false;
 
   constructor(private etudiantService: EtudiantService) { }
 
   ngOnInit(): void {
-    this.etudiants = this.etudiantService.etudiants;
+    // this.etudiants = this.etudiantService.etudiants;
+    this.isLoading = true;
+    this.etudiantService.getEtudiants().subscribe((listEtudiants) => {
+      this.etudiants = listEtudiants;
+      this.etudiantService.etudiants = listEtudiants;
+      this.isLoading = false;
+    });
   }
 
 }

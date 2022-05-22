@@ -1,8 +1,10 @@
 <mat-list-item>
   <mat-icon mat-list-icon>person</mat-icon>
+  <div mat-line>{{etudiant._id}}</div>
   <div mat-line>{{etudiant.nom}} | {{etudiant.email}}</div>
   <div mat-line> {{etudiant.dateNais | date}} </div>
-  <button mat-button color="primary">Edit</button>
-  <button mat-button color="warn" (click)="onDelete(etudiant)">Delete</button>
-  <button mat-button color="accent" [routerLink]="['/etudiantDetail', etudiant.id]">Detail</button>
+  <button mat-button color="primary" [routerLink]="['/etudiantAdd', etudiant._id]">Edit</button> |
+  <button mat-button color="warn" (click)="onDelete(etudiant)">Delete</button> |
+  <button mat-button color="accent" [routerLink]="['/etudiantDetail', etudiant._id]">Detail</button>
 </mat-list-item>
+<mat-divider></mat-divider>

@@ -1,21 +1,26 @@
-<mat-card style="width: 60%;">
+<mat-card style="width: 70%;">
+  <mat-card-title *ngIf="id === '-1'">Ajout Etudiant</mat-card-title>
+  <mat-card-title *ngIf="id != '-1'">Mettre à jour Etudiant</mat-card-title>
   <form (ngSubmit)="onSubmit(formEtudiant)" #formEtudiant="ngForm">
     <p>
       <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Nom</mat-label>
-        <input matInput name="nom"  id="nom" placeholder="Nom Etudiant" required ngModel>
+        <input matInput name="nom"  id="nom" placeholder="Nom Etudiant" required minlength="3" [ngModel]="etudiant!.nom" #nom="ngModel">
+        <mat-error *ngIf="nom.errors?.['required']"> Nom is required!</mat-error>
+        <mat-error *ngIf="nom.errors?.['minlength']"> Nom minlength 3 caractère!</mat-error>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Email</mat-label>
-        <input matInput name="email" id="email" placeholder="email etuiant" required ngModel>
+        <input matInput name="email" id="email" placeholder="email etuiant" required [ngModel]="etudiant!.email" #email="ngModel">
+        <mat-error *ngIf="email.errors?.['required']"> Email is required!</mat-error>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
         <mat-label>Date Naissance</mat-label>
-        <input matInput name="dateNais" id="dateNais" [matDatepicker]="picker" require ngModel>
+        <input matInput name="dateNais" id="dateNais" [matDatepicker]="picker" require [ngModel]="etudiant!.dateNais">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -23,6 +28,6 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </p>
-    <button mat-raised-button color="primary" type="submit">Add</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
   </form>
 </mat-card>

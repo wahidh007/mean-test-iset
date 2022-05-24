@@ -22,4 +22,16 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('nom should be Salah', () => {
+    expect(component.nom).toEqual('Salah');
+  });
+
+  it('list etudiants should be more than 1', () => {
+    expect(component.etudiants.length).toBeGreaterThan(1);
+  });
+
+  it('list etudiants[0].nom should be Salah', () => {
+    expect(component.etudiants[0].nom).toBe("Salah");
+  });
 });

@@ -17,10 +17,11 @@ export class EtudiantListComponent implements OnInit {
   ngOnInit(): void {
     // this.etudiants = this.etudiantService.etudiants;
     this.isLoading = true;
-    this.etudiantService.getEtudiants().subscribe((listEtudiants) => {
-      this.etudiants = listEtudiants;
-      this.etudiantService.etudiants = listEtudiants;
-      this.isLoading = false;
+    this.etudiantService.getEtudiants()
+      .subscribe((listEtudiants) => {
+        this.etudiants = listEtudiants;
+        this.etudiantService.etudiants = listEtudiants;
+        this.isLoading = false;
     });
   }
 

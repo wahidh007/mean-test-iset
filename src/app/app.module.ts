@@ -15,7 +15,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EtudiantDashboardComponent } from './etudiant/etudiant-dashboard/etudiant-dashboard.component';
 import { EtudiantAddComponent } from './etudiant/etudiant-add/etudiant-add.component';
 import { EtudiantListComponent } from './etudiant/etudiant-list/etudiant-list.component';
 import { EtudiantDetailComponent } from './etudiant/etudiant-detail/etudiant-detail.component';
@@ -27,7 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    EtudiantDashboardComponent,
     EtudiantAddComponent,
     EtudiantListComponent,
     EtudiantDetailComponent,

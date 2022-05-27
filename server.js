@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const routeEtudiant = require('./routes/etudiant.route')
+const routeEtudiant = require('./backend/routes/etudiant.route')
 
 const app = express()
 
@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://wahid:88ciKvnaGvM4HdHa@cluster0.rpxl2.mongodb.ne
 
 app.use('/api/etudiant', routeEtudiant)
 
-app.use(express.static(path.join(__dirname, 'www')))
+app.use(express.static(path.join(__dirname, 'backend/www')))
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {

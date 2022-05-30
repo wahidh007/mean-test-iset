@@ -9,6 +9,19 @@
   <button mat-icon-button routerLink="/login" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>login</mat-icon>
   </button>
+
+  <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5"> <img src="assets/img/usr/aline.jpg" alt="user" class="profile-pic"> </button>
+  <mat-menu #profile="matMenu" class="mymegamenu">
+      <button mat-menu-item>
+          <mat-icon>settings</mat-icon> Settings </button>
+      <button mat-menu-item>
+          <mat-icon>account_box</mat-icon> Profile </button>
+      <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon> Disable notifications </button>
+      <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon> Sign Out </button>
+  </mat-menu>
+
 </mat-toolbar>
 
 <main style="margin-left: 25%; margin-top: 1rem">

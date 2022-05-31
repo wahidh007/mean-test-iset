@@ -13,6 +13,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,6 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     MatProgressSpinnerModule,
     MatMenuModule,
+    MatBadgeModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

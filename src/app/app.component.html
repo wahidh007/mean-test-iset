@@ -1,16 +1,22 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>MEAN Etudiants</span>
-  <a mat-button routerLink="/etudiantList">Liste Etudiant</a>
-  <a mat-button [routerLink]="['/etudiantAdd', -1]">Add Etudiant</a>
-  <span class="spacer"></span>
-  <button mat-icon-button routerLink="/login" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <div>MEAN Etudiants</div>
+  <span class="nav-tool-items">
+    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+  </span>
+
+<span class="spacer"></span>
+  <button mat-icon-button routerLink="/login" class="example-icon favorite-icon">
     <mat-icon>login</mat-icon>
   </button>
 
-  <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5"> <img src="assets/img/usr/aline.jpg" alt="user" class="profile-pic"> </button>
+  <button mat-icon-button>
+    <mat-icon matBadge="5" matBadgeColor="warn" matBadgeSize="small">message</mat-icon>
+  </button>
+
+  <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5">
+    <img width="35px" height="35px" style="border-radius: 50%;" src="assets/img/usr/aline.jpg" alt="user" class="profile-pic">
+  </button>
   <mat-menu #profile="matMenu" class="mymegamenu">
       <button mat-menu-item>
           <mat-icon>settings</mat-icon> Settings </button>
@@ -24,7 +30,27 @@
 
 </mat-toolbar>
 
-<main style="margin-left: 25%; margin-top: 1rem">
-  <!-- <app-etudiant-list></app-etudiant-list> -->
-  <router-outlet></router-outlet>
-</main>
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav
+    #sidenav
+    [mode]="isBiggerScreen() ? 'over' : 'side'"
+    [(opened)]="opened"
+    [fixedInViewport]="true"
+    [fixedTopGap]
+  >
+    <mat-nav-list>
+     <a mat-list-item class="mat-list-item" routerLinkActive="active" [routerLink]="['/etudiantAdd', -1]">
+      <mat-icon>add</mat-icon> Add Student
+    </a>
+    <a mat-list-item class="mat-list-item" routerLinkActive="active" routerLink="/etudiantList">
+      <mat-icon>format_list_bulleted</mat-icon> View Students
+    </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

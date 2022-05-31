@@ -1,6 +1,8 @@
 <mat-card style="width: 70%;">
   <mat-card-title *ngIf="id === '-1'">Ajout Etudiant</mat-card-title>
   <mat-card-title *ngIf="id != '-1'">Mettre à jour Etudiant</mat-card-title>
+  <mat-divider fxFlex="1 0"></mat-divider>
+
   <form (ngSubmit)="onSubmit(formEtudiant)" #formEtudiant="ngForm">
     <p>
       <mat-form-field appearance="fill" style="width: 100%;">
